@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct GameStats: Codable {
+    
+    let plays: Int
+    let likes: Int
+    
+}

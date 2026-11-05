@@ -30,10 +30,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B4CBD646309CD4D8007C4C24 /* Exceptions for "nanogram" folder in "nanogram" target */ = {
+		B4CBD673309CE22E007C4C24 /* Exceptions for "nanogram" folder in "nanogram" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = B4CBD61F309CD4D7007C4C24 /* nanogram */;
 		};
@@ -43,7 +43,7 @@
 		B4CBD622309CD4D7007C4C24 /* nanogram */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				B4CBD646309CD4D8007C4C24 /* Exceptions for "nanogram" folder in "nanogram" target */,
+				B4CBD673309CE22E007C4C24 /* Exceptions for "nanogram" folder in "nanogram" target */,
 			);
 			path = nanogram;
 			sourceTree = "<group>";
@@ -264,7 +264,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = nanogram/Info.plist;
+				INFOPLIST_FILE = nanogram/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -300,7 +300,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = nanogram/Info.plist;
+				INFOPLIST_FILE = nanogram/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

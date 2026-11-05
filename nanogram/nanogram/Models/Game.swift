@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct Game: Codable {
+    
+    let id: String
+    let title: String
+    let html: String
+    let creator: GameCreator?
+    let stats: GameStats
+    
+}

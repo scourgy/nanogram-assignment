@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct GamePageResponse: Codable {
+    
+    let page: Int
+    let totalPages: Int
+    let nextPage: Int?
+    let games: [Game]
+    
+}
