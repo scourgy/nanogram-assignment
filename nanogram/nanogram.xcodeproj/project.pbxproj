@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		B4CBD637309CD4D8007C4C24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CBD618309CD4D7007C4C24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4CBD61F309CD4D7007C4C24;
+			remoteInfo = nanogram;
+		};
+		B4CBD641309CD4D8007C4C24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CBD618309CD4D7007C4C24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4CBD61F309CD4D7007C4C24;
+			remoteInfo = nanogram;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B4CBD620309CD4D7007C4C24 /* nanogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4CBD636309CD4D8007C4C24 /* nanogramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nanogramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4CBD640309CD4D8007C4C24 /* nanogramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nanogramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B4CBD646309CD4D8007C4C24 /* Exceptions for "nanogram" folder in "nanogram" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B4CBD61F309CD4D7007C4C24 /* nanogram */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B4CBD622309CD4D7007C4C24 /* nanogram */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B4CBD646309CD4D8007C4C24 /* Exceptions for "nanogram" folder in "nanogram" target */,
+			);
+			path = nanogram;
+			sourceTree = "<group>";
+		};
+		B4CBD639309CD4D8007C4C24 /* nanogramTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = nanogramTests;
+			sourceTree = "<group>";
+		};
+		B4CBD643309CD4D8007C4C24 /* nanogramUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = nanogramUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4CBD61D309CD4D7007C4C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		B4CBD633309CD4D8007C4C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		B4CBD63D309CD4D8007C4C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4CBD617309CD4D7007C4C24 = {
+			isa = PBXGroup;
+			children = (
+				B4CBD622309CD4D7007C4C24 /* nanogram */,
+				B4CBD639309CD4D8007C4C24 /* nanogramTests */,
+				B4CBD643309CD4D8007C4C24 /* nanogramUITests */,
+				B4CBD621309CD4D7007C4C24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4CBD621309CD4D7007C4C24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4CBD620309CD4D7007C4C24 /* nanogram.app */,
+				B4CBD636309CD4D8007C4C24 /* nanogramTests.xctest */,
+				B4CBD640309CD4D8007C4C24 /* nanogramUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4CBD61F309CD4D7007C4C24 /* nanogram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4CBD647309CD4D8007C4C24 /* Build configuration list for PBXNativeTarget "nanogram" */;
+			buildPhases = (
+				B4CBD61C309CD4D7007C4C24 /* Sources */,
+				B4CBD61D309CD4D7007C4C24 /* Frameworks */,
+				B4CBD61E309CD4D7007C4C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				B4CBD622309CD4D7007C4C24 /* nanogram */,
+			);
+			name = nanogram;
+			productName = nanogram;
+			productReference = B4CBD620309CD4D7007C4C24 /* nanogram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B4CBD635309CD4D8007C4C24 /* nanogramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4CBD64C309CD4D8007C4C24 /* Build configuration list for PBXNativeTarget "nanogramTests" */;
+			buildPhases = (
+				B4CBD632309CD4D8007C4C24 /* Sources */,
+				B4CBD633309CD4D8007C4C24 /* Frameworks */,
+				B4CBD634309CD4D8007C4C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4CBD638309CD4D8007C4C24 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B4CBD639309CD4D8007C4C24 /* nanogramTests */,
+			);
+			name = nanogramTests;
+			productName = nanogramTests;
+			productReference = B4CBD636309CD4D8007C4C24 /* nanogramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B4CBD63F309CD4D8007C4C24 /* nanogramUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4CBD64F309CD4D8007C4C24 /* Build configuration list for PBXNativeTarget "nanogramUITests" */;
+			buildPhases = (
+				B4CBD63C309CD4D8007C4C24 /* Sources */,
+				B4CBD63D309CD4D8007C4C24 /* Frameworks */,
+				B4CBD63E309CD4D8007C4C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4CBD642309CD4D8007C4C24 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B4CBD643309CD4D8007C4C24 /* nanogramUITests */,
+			);
+			name = nanogramUITests;
+			productName = nanogramUITests;
+			productReference = B4CBD640309CD4D8007C4C24 /* nanogramUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4CBD618309CD4D7007C4C24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2710;
+				LastUpgradeCheck = 2710;
+				TargetAttributes = {
+					B4CBD61F309CD4D7007C4C24 = {
+						CreatedOnToolsVersion = 27.1;
+					};
+					B4CBD635309CD4D8007C4C24 = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = B4CBD61F309CD4D7007C4C24;
+					};
+					B4CBD63F309CD4D8007C4C24 = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = B4CBD61F309CD4D7007C4C24;
+					};
+				};
+			};
+			buildConfigurationList = B4CBD61B309CD4D7007C4C24 /* Build configuration list for PBXProject "nanogram" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B4CBD617309CD4D7007C4C24;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B4CBD621309CD4D7007C4C24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4CBD61F309CD4D7007C4C24 /* nanogram */,
+				B4CBD635309CD4D8007C4C24 /* nanogramTests */,
+				B4CBD63F309CD4D8007C4C24 /* nanogramUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4CBD61E309CD4D7007C4C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		B4CBD634309CD4D8007C4C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		B4CBD63E309CD4D8007C4C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4CBD61C309CD4D7007C4C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		B4CBD632309CD4D8007C4C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		B4CBD63C309CD4D8007C4C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B4CBD638309CD4D8007C4C24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4CBD61F309CD4D7007C4C24 /* nanogram */;
+			targetProxy = B4CBD637309CD4D8007C4C24 /* PBXContainerItemProxy */;
+		};
+		B4CBD642309CD4D8007C4C24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4CBD61F309CD4D7007C4C24 /* nanogram */;
+			targetProxy = B4CBD641309CD4D8007C4C24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B4CBD648309CD4D8007C4C24 /* Debug configuration for PBXNativeTarget "nanogram" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = nanogram/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galinyonchev.nanogram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B4CBD649309CD4D8007C4C24 /* Release configuration for PBXNativeTarget "nanogram" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = nanogram/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galinyonchev.nanogram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B4CBD64A309CD4D8007C4C24 /* Debug configuration for PBXProject "nanogram" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B4CBD64B309CD4D8007C4C24 /* Release configuration for PBXProject "nanogram" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4CBD64D309CD4D8007C4C24 /* Debug configuration for PBXNativeTarget "nanogramTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galinyonchev.nanogramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nanogram.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nanogram";
+			};
+			name = Debug;
+		};
+		B4CBD64E309CD4D8007C4C24 /* Release configuration for PBXNativeTarget "nanogramTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galinyonchev.nanogramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nanogram.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nanogram";
+			};
+			name = Release;
+		};
+		B4CBD650309CD4D8007C4C24 /* Debug configuration for PBXNativeTarget "nanogramUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galinyonchev.nanogramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = nanogram;
+			};
+			name = Debug;
+		};
+		B4CBD651309CD4D8007C4C24 /* Release configuration for PBXNativeTarget "nanogramUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galinyonchev.nanogramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = nanogram;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4CBD61B309CD4D7007C4C24 /* Build configuration list for PBXProject "nanogram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4CBD64A309CD4D8007C4C24 /* Debug configuration for PBXProject "nanogram" */,
+				B4CBD64B309CD4D8007C4C24 /* Release configuration for PBXProject "nanogram" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		B4CBD647309CD4D8007C4C24 /* Build configuration list for PBXNativeTarget "nanogram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4CBD648309CD4D8007C4C24 /* Debug configuration for PBXNativeTarget "nanogram" */,
+				B4CBD649309CD4D8007C4C24 /* Release configuration for PBXNativeTarget "nanogram" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		B4CBD64C309CD4D8007C4C24 /* Build configuration list for PBXNativeTarget "nanogramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4CBD64D309CD4D8007C4C24 /* Debug configuration for PBXNativeTarget "nanogramTests" */,
+				B4CBD64E309CD4D8007C4C24 /* Release configuration for PBXNativeTarget "nanogramTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		B4CBD64F309CD4D8007C4C24 /* Build configuration list for PBXNativeTarget "nanogramUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4CBD650309CD4D8007C4C24 /* Debug configuration for PBXNativeTarget "nanogramUITests" */,
+				B4CBD651309CD4D8007C4C24 /* Release configuration for PBXNativeTarget "nanogramUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4CBD618309CD4D7007C4C24 /* Project object */;
+	validationLevel = 1;
+}
