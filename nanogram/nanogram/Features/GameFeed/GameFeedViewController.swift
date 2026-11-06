@@ -7,12 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         testGameDecoding()
-        // Do any additional setup after loading the view.
     }
     
     private func testGameDecoding() {
