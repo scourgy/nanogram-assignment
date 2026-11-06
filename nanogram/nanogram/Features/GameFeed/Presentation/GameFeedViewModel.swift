@@ -14,6 +14,9 @@ final class GameFeedViewModel {
     var onItemsChange: (() -> Void)?
     var onPlayModeChange: ((_ playModeOn: Bool) -> Void)?
     
+    // MARK: - Variables and constants
+    private let prefetchThreshold: Int = 5
+    
     // MARK: - Dependencies
     private let repository: FeedRepositoryProtocol
     private let likesStorage: LikesStorageProtocol
