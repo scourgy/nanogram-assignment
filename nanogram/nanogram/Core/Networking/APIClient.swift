@@ -25,18 +25,22 @@ struct APIClient: APIClientProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = "GET" // Potentially an enum
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let (data, response) = try await session.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
+        do {
+            let (data, response) = try await session.data(for: request)
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw APIError.invalidResponse
+            }
+            
+            guard (200...299).contains(httpResponse.statusCode) else {
+                throw APIError.httpError(statusCode: httpResponse.statusCode)
+            }
+            
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            throw APIError.map(error)
         }
         
-        guard (200...299).contains(httpResponse.statusCode) else {
-            throw APIError.httpError(statusCode: httpResponse.statusCode)
-        }
-        
-        return try decoder.decode(T.self, from: data)
     }
     
 }

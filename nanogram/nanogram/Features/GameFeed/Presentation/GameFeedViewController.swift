@@ -10,24 +10,20 @@ import UIKit
 class GameFeedViewController: UIViewController {
     
     // MARK: - Dependencies
-    private let viewModel: GameFeedViewModel
-    private let gamePlayer: GamePlayerControllerProtocol
+    private var viewModel: GameFeedViewModel
+    private var gamePlayerController: GamePlayerControllerProtocol
+    private var dataSource: GameFeedDataSource
     
     // MARK: - Initialization
-    init(viewModel: GameFeedViewModel, gamePlayer: GamePlayerControllerProtocol) {
-            self.viewModel = viewModel
-            self.gamePlayer = gamePlayer
-            super.init(nibName: nil, bundle: nil)
-        }
-    
-    init?(coder: NSCoder, viewModel: GameFeedViewModel, gamePlayer: GamePlayerControllerProtocol) {
+    init?(coder: NSCoder, viewModel: GameFeedViewModel, gamePlayerController: GamePlayerControllerProtocol, dataSource: GameFeedDataSource) {
         self.viewModel = viewModel
-        self.gamePlayer = gamePlayer
+        self.gamePlayerController = gamePlayerController
+        self.dataSource = dataSource
         super.init(coder: coder)
     }
     
     required init?(coder: NSCoder) {
-        fatalError("Use init(coder:viewModel:player:) or init(viewModel:player:)")
+        fatalError("Use init with coder, viewModel and gamePlayerController.")
     }
     
     // MARK: - Lifecycle
