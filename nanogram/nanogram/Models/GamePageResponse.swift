@@ -14,4 +14,12 @@ struct GamePageResponse: Codable {
     let nextPage: Int?
     let games: [Game]
     
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        page = try container.decode(Int.self, forKey: .page)
+        totalPages = try container.decode(Int.self, forKey: .totalPages)
+        nextPage = try? container.decodeIfPresent(Int.self, forKey: .nextPage)
+        games = try container.decodeIfPresent(LossyArray<Game>.self, forKey: .games)?.elements ?? []
+    }
+    
 }
