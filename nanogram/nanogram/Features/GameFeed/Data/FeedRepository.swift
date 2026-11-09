@@ -39,12 +39,16 @@ final class FeedRepository: FeedRepositoryProtocol {
         defer {
             isLoadingPage = false
         }
-        
-        let response = try await gamesAPI.fetchGamesFeed(page: page)
-        
-        let newGames = response.games.filter { loadedGamesIDs.insert($0.id).inserted }
-        games.append(contentsOf: newGames)
-        nextPage = response.nextPage
+        do {
+            let response = try await gamesAPI.fetchGamesFeed(page: page)
+            
+            let newGames = response.games.filter { loadedGamesIDs.insert($0.id).inserted }
+            games.append(contentsOf: newGames)
+            nextPage = response.nextPage
+        } catch {
+            throw APIError.map(error)
+        }
+
     }
     
 }

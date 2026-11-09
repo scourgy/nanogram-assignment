@@ -16,6 +16,12 @@ final class GameFeedViewModel {
     
     // MARK: - Variables and constants
     private let prefetchThreshold: Int = 5
+    private var isLoadingPage = false
+    private(set) var isPlayMode = false
+    private(set) var activeIndex: Int?
+    var numberOfItems: Int {
+        repository.games.count
+    }
     
     // MARK: - Dependencies
     private let repository: FeedRepositoryProtocol
@@ -28,12 +34,30 @@ final class GameFeedViewModel {
     }
     
     // MARK: - Public
+    func game(at index: Int) -> Game {
+        repository.games[index]
+    }
+    
+    func isLiked(at index: Int) -> Bool {
+        likesStorage.isLiked(gameID: game(at: index).id)
+    }
+    
+    func didActivate(index: Int) {
+        activeIndex = index
+        guard index >= numberOfItems - prefetchThreshold else {
+            return
+        }
+        loadNextPage()
+    }
+    
     func start() {
-        // TODO: - Initial load
+        loadNextPage()
     }
     
     func toggleLike(at index: Int) {
-        // TODO: - Find item at index and toggle its liked flag
+        let game = game(at: index)
+        let isLiked = likesStorage.isLiked(gameID: game.id)
+        likesStorage.setLiked(gameID: game.id, isLiked: !isLiked)
     }
     
     func retry() {
@@ -41,16 +65,48 @@ final class GameFeedViewModel {
     }
     
     func enterPlayMode() {
-        // TODO: - Enter play mode
+        guard !isPlayMode, activeIndex != nil else {
+            return
+        }
+        isPlayMode = true
+        onPlayModeChange?(true)
     }
     
     func exitPlayMode() {
-        // TODO: - Exit play mode
+        guard isPlayMode else {
+            return
+        }
+        isPlayMode = false
+        onPlayModeChange?(false)
     }
     
     // MARK: - Private
     private func loadNextPage() {
-        // TODO: - Load next page, if loading is not in progress
+        guard !isLoadingPage, repository.hasMorePages else {
+            return
+        }
+                
+        isLoadingPage = true
+        
+        Task { [weak self] in
+            guard let self else {
+                return
+            }
+            defer {
+                isLoadingPage = false
+            }
+            
+            let countBeforeLoad = numberOfItems
+            do {
+                try await repository.loadNextPage()
+            } catch {
+                print("[ERROR] Failed to load the next feed page: \(error)")
+            }
+            
+            if numberOfItems != countBeforeLoad {
+                onItemsChange?()
+            }
+        }
     }
     
     

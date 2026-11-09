@@ -20,7 +20,7 @@ final class AppContainer {
     
     func createGameFeedViewController() -> GameFeedViewController {
         let viewModel = GameFeedViewModel(repository: FeedRepository(gamesAPI: gamesAPI), likesStorage: likesStorage)
-        let dataSource = GameFeedDataSource()
+        let dataSource = GameFeedDataSource(viewModel: viewModel)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(identifier: "GameFeedViewController") { coder in
             GameFeedViewController(coder: coder, viewModel: viewModel, gamePlayerController: GamePlayerController(), dataSource: dataSource)
