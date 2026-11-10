@@ -61,7 +61,7 @@ final class GameFeedViewModel {
     }
     
     func retry() {
-        // TODO: - Retry if failed
+        loadNextPage()
     }
     
     func enterPlayMode() {
@@ -85,6 +85,11 @@ final class GameFeedViewModel {
         guard !isLoadingPage, repository.hasMorePages else {
             return
         }
+        
+        let isFirstPage = numberOfItems == 0
+        if isFirstPage {
+            onGameFeedStateChange?(.loading)
+        }
                 
         isLoadingPage = true
         
@@ -105,6 +110,10 @@ final class GameFeedViewModel {
             
             if numberOfItems != countBeforeLoad {
                 onItemsChange?()
+            }
+            if isFirstPage {
+                let state: GameFeedState = numberOfItems == 0 ? .empty : .loaded
+                onGameFeedStateChange?(state)
             }
         }
     }

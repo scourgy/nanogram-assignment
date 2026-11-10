@@ -23,6 +23,7 @@ struct APIClient: APIClientProtocol {
     
     func get<T: Decodable>(from url: URL) async throws -> T {
         var request = URLRequest(url: url)
+        request.timeoutInterval = 10
         request.httpMethod = "GET" // Potentially an enum
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         do {

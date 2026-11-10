@@ -43,6 +43,7 @@ class GameFeedCell: UICollectionViewCell {
         titleLabel.text = ""
         creatorLabel.text = ""
         statsLabel.text = ""
+        likeButton.isSelected = false
         setPlayMode(false)
     }
     

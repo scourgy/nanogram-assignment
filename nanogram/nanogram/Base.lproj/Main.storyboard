@@ -25,6 +25,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sts-Vw-f01" userLabel="Status View" customClass="GameFeedStatusView" customModule="nanogram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cls-Bt-n01" userLabel="Close Button">
                                 <rect key="frame" x="16" y="67" width="44" height="44"/>
                                 <constraints>
@@ -46,12 +50,17 @@
                             <constraint firstItem="Fd1-Cv-Gm3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cn2-Ld-Bb2"/>
                             <constraint firstAttribute="trailing" secondItem="Fd1-Cv-Gm3" secondAttribute="trailing" id="Cn3-Tr-Cc3"/>
                             <constraint firstAttribute="bottom" secondItem="Fd1-Cv-Gm3" secondAttribute="bottom" id="Cn4-Bt-Dd4"/>
+                            <constraint firstItem="Sts-Vw-f01" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Cn7-St-Ff1"/>
+                            <constraint firstItem="Sts-Vw-f01" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cn8-St-Ff2"/>
+                            <constraint firstAttribute="trailing" secondItem="Sts-Vw-f01" secondAttribute="trailing" id="Cn9-St-Ff3"/>
+                            <constraint firstAttribute="bottom" secondItem="Sts-Vw-f01" secondAttribute="bottom" id="Cn0-St-Ff4"/>
                             <constraint firstItem="Cls-Bt-n01" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Cn5-Cl-Ee1"/>
                             <constraint firstItem="Cls-Bt-n01" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Cn6-Cl-Ee2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="Cls-Bt-n01" id="Ot2-Cl-Ee6"/>
+                        <outlet property="statusView" destination="Sts-Vw-f01" id="Ot3-St-Ff5"/>
                         <outlet property="collectionView" destination="Fd1-Cv-Gm3" id="Ot1-Cv-Ee5"/>
                     </connections>
                 </viewController>

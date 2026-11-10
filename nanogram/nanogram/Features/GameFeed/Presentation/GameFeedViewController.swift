@@ -11,6 +11,7 @@ class GameFeedViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var statusView: GameFeedStatusView!
     @IBOutlet private weak var closeButton: UIButton!
     
     // MARK: - Actions
@@ -46,6 +47,7 @@ class GameFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupStatusView()
         bindViewModel()
         viewModel.start()
     }
@@ -62,12 +64,21 @@ class GameFeedViewController: UIViewController {
         collectionView.addGestureRecognizer(playModeTapRecognizer)
     }
     
+    private func setupStatusView() {
+        statusView.onRetry = { [weak self] in
+            self?.viewModel.retry()
+        }
+    }
+    
     private func bindViewModel() {
         viewModel.onItemsChange = { [weak self] in
             self?.insertNewItems()
         }
         viewModel.onPlayModeChange = { [weak self] isPlayMode in
             self?.setPlayMode(isPlayMode)
+        }
+        viewModel.onGameFeedStateChange = { [weak self] state in
+            self?.statusView.setupForGameFeedState(state)
         }
     }
     

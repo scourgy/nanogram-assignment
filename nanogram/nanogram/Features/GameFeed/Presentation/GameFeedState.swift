@@ -11,7 +11,7 @@ enum GameFeedState {
     
     case empty
     case loading
-    case loaded(games: [Game])
+    case loaded
     case failed(error: APIError)
     
 }
