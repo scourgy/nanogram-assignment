@@ -23,6 +23,14 @@ class GameFeedViewController: UIViewController {
         viewModel.enterPlayMode()
     }
     
+    @objc private func appWillResignActive() {
+        gamePlayerController.pause()
+    }
+        
+    @objc private func appDidBecomeActive() {
+        gamePlayerController.resume()
+    }
+    
     // MARK: - Dependencies
     private var viewModel: GameFeedViewModel
     private var gamePlayerController: GamePlayerControllerProtocol
@@ -62,6 +70,12 @@ class GameFeedViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         collectionView.addGestureRecognizer(playModeTapRecognizer)
+    }
+    
+    private func observeAppLifecycle() {
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(appWillResignActive), name: UIApplication.willResignActiveNotification, object: nil)
+        center.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     private func setupStatusView() {

@@ -12,6 +12,8 @@ protocol GamePlayerControllerProtocol {
     
     func play(_ game: Game, in container: UIView)
     func stop()
+    func pause()
+    func resume()
     func setInteractive(_ isInteractive: Bool)
     
 }
@@ -60,6 +62,14 @@ class GamePlayerController: NSObject, GamePlayerControllerProtocol {
         webView?.removeFromSuperview()
         webView = nil
         currentGame = nil
+    }
+    
+    func pause() {
+        webView?.setAllMediaPlaybackSuspended(true)
+    }
+    
+    func resume() {
+        webView?.setAllMediaPlaybackSuspended(false)
     }
     
     func setInteractive(_ isInteractive: Bool) {
