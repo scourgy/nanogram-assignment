@@ -16,11 +16,12 @@ final class GameFeedViewModel {
     
     // MARK: - Variables and constants
     private let prefetchThreshold: Int = 5
+    private var catalogLaps = 1
     private var isLoadingPage = false
     private(set) var isPlayMode = false
     private(set) var activeIndex: Int?
     var numberOfItems: Int {
-        repository.games.count
+        repository.games.count * catalogLaps
     }
     
     // MARK: - Dependencies
@@ -35,7 +36,8 @@ final class GameFeedViewModel {
     
     // MARK: - Public
     func game(at index: Int) -> Game {
-        repository.games[index]
+        let games = repository.games
+        return games[index % games.count]
     }
     
     func isLiked(at index: Int) -> Bool {
@@ -82,7 +84,7 @@ final class GameFeedViewModel {
     
     // MARK: - Private
     private func loadNextPage() {
-        guard !isLoadingPage, repository.hasMorePages else {
+        guard !isLoadingPage, repository.hasMorePages || numberOfItems > 0 else {
             return
         }
         
@@ -97,15 +99,21 @@ final class GameFeedViewModel {
             guard let self else {
                 return
             }
+            
             defer {
                 isLoadingPage = false
             }
             
             let countBeforeLoad = numberOfItems
-            do {
-                try await repository.loadNextPage()
-            } catch {
-                print("[ERROR] Failed to load the next feed page: \(error)")
+            if repository.hasMorePages {
+                do {
+                    try await repository.loadNextPage()
+                } catch {
+                    print("[ERROR] Failed to load the next feed page: \(error)")
+                }
+            } else {
+                // Nothing left to fetch, start over
+                catalogLaps += 1
             }
             
             if numberOfItems != countBeforeLoad {

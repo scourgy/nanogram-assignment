@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum GamePlayerState {
+    case loading
+    case running
+    case failed
+}
