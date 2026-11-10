@@ -57,6 +57,7 @@ class GameFeedViewController: UIViewController {
         setupCollectionView()
         setupStatusView()
         bindViewModel()
+        observeAppLifecycle()
         viewModel.start()
     }
 
