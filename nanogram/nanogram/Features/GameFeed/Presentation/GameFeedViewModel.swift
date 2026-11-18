@@ -13,6 +13,7 @@ final class GameFeedViewModel {
     var onGameFeedStateChange: ((_ state: GameFeedState) -> Void)?
     var onItemsChange: (() -> Void)?
     var onPlayModeChange: ((_ playModeOn: Bool) -> Void)?
+    var onGameLikeChange: ((_ isLiked: Bool, _ index: Int) -> Void)?
     
     // MARK: - Variables and constants
     private let prefetchThreshold: Int = 5
@@ -60,6 +61,7 @@ final class GameFeedViewModel {
         let game = game(at: index)
         let isLiked = likesStorage.isLiked(gameID: game.id)
         likesStorage.setLiked(gameID: game.id, isLiked: !isLiked)
+        onGameLikeChange?(!isLiked, index)
     }
     
     func retry() {

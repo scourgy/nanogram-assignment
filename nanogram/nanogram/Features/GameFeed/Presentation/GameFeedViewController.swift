@@ -95,6 +95,12 @@ class GameFeedViewController: UIViewController {
         viewModel.onGameFeedStateChange = { [weak self] state in
             self?.statusView.setupForGameFeedState(state)
         }
+        viewModel.onGameLikeChange = { [weak self] isLiked, index in
+            guard let strongSelf = self else { return }
+            let game = strongSelf.viewModel.game(at: index)
+            let cell = strongSelf.collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? GameFeedCell
+            cell?.configure(with: game, isLiked: isLiked)
+        }
     }
     
     private func makeFullScreenPagingLayout() -> UICollectionViewLayout {
