@@ -25,7 +25,6 @@ class GameFeedCell: UICollectionViewCell {
     
     // MARK: - Actions
     @IBAction private func likeTapped(_ sender: UIButton) {
-        likeButton.isSelected = !sender.isSelected
         onLike?()
     }
     
