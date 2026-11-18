@@ -30,19 +30,25 @@ class GameFeedCell: UICollectionViewCell {
     
     // MARK: - Callbacks
     var onLike: (() -> Void)?
+    var onRetry: (() -> Void)?
     
     // MARK: - Lifecycle
     override func awakeFromNib() {
          super.awakeFromNib()
          statusView.isHidden = true
+        statusView.onRetry = { [weak self] in
+            self?.onRetry?()
+        }
      }
     
     override func prepareForReuse() {
         onLike = nil
+        onRetry = nil
         titleLabel.text = ""
         creatorLabel.text = ""
         statsLabel.text = ""
         likeButton.isSelected = false
+        setGamePlayerState(.idle)
         setPlayMode(false)
     }
     
@@ -61,6 +67,10 @@ class GameFeedCell: UICollectionViewCell {
     
     func setPlayMode(_ isPlayMode: Bool) {
         overlayView.isHidden = isPlayMode
+    }
+    
+    func setGamePlayerState(_ state: GamePlayerState) {
+        statusView.setupForGamePlayerState(state)
     }
     
 }

@@ -48,6 +48,19 @@ final class GameFeedStatusView: UIView {
         }
     }
     
+    func setupForGamePlayerState(_ state: GamePlayerState) {
+        switch state {
+            case .idle:
+                hide()
+            case .loading:
+                show(message: nil, canRetry: false)
+            case .running:
+                hide()
+            case .failed:
+                show(message: "Unable to load the game, please retry.", canRetry: true)
+        }
+    }
+    
     // MARK: - Private
     private func loadContentFromNib() {
         let nib = UINib(nibName: "GameFeedStatusView", bundle: nil)

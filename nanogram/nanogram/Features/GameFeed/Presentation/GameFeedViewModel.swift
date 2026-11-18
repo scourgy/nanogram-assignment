@@ -107,11 +107,12 @@ final class GameFeedViewModel {
             }
             
             let countBeforeLoad = numberOfItems
+            var loadError: APIError?
             if repository.hasMorePages {
                 do {
                     try await repository.loadNextPage()
                 } catch {
-                    print("[ERROR] Failed to load the next feed page: \(error)")
+                    loadError = APIError.map(error)
                 }
             } else {
                 // Nothing left to fetch, start over
@@ -122,8 +123,13 @@ final class GameFeedViewModel {
                 onItemsChange?()
             }
             if isFirstPage {
-                let state: GameFeedState = numberOfItems == 0 ? .empty : .loaded
-                onGameFeedStateChange?(state)
+                let state: GameFeedState
+                 if let loadError {
+                     state = .failed(error: loadError)
+                 } else {
+                     state = numberOfItems == 0 ? .empty : .loaded
+                 }
+                 onGameFeedStateChange?(state)
             }
         }
     }

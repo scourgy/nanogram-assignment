@@ -15,6 +15,7 @@ protocol GamePlayerControllerProtocol {
     func pause()
     func resume()
     func setInteractive(_ isInteractive: Bool)
+    var onStateChange:((_ state: GamePlayerState) -> Void)? { get set }
     
 }
 
@@ -33,6 +34,9 @@ class GamePlayerController: NSObject, GamePlayerControllerProtocol {
             return configuration
         }()
     
+    // MARK: - Callbacks:
+    var onStateChange: ((GamePlayerState) -> Void)?
+    
     // MARK: - Setup
     func play(_ game: Game, in container: UIView) {
         if currentGame?.id == game.id, let webView, webView.superview === container {
@@ -48,7 +52,7 @@ class GamePlayerController: NSObject, GamePlayerControllerProtocol {
         webView.scrollView.isScrollEnabled = false
         webView.scrollView.bounces = false
         webView.scrollView.contentInsetAdjustmentBehavior = .never
-        webView.isUserInteractionEnabled = false
+        webView.isUserInteractionEnabled = isInteractive
         container.addSubview(webView)
 
         self.webView = webView
@@ -79,7 +83,12 @@ class GamePlayerController: NSObject, GamePlayerControllerProtocol {
     
     // MARK: - Private
     private func load(_ game: Game) {
+        onStateChange?(.loading)
          webView?.loadHTMLString(game.html, baseURL: URL(string: "https://\(game.id).games.nanogram.local/"))
+    }
+    
+    private func handleError(_ error: Error) {
+        onStateChange?(.failed)
     }
     
 }
@@ -99,7 +108,18 @@ extension GamePlayerController: WKNavigationDelegate {
         let isGameOrigin = url.scheme == "about" || url.host?.hasSuffix("games.nanogram.local") == true
         return isGameOrigin ? .allow : .cancel
     }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        onStateChange?(.running)
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: any Error) {
+        handleError(error)
+    }
 
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: any Error) {
+        handleError(error)
+    }
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         if let currentGame {

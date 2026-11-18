@@ -38,6 +38,7 @@ class GameFeedViewController: UIViewController {
     
     // MARK: - Variables and constants
     private lazy var playModeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(feedTapped))
+    private weak var playerCell: GameFeedCell?
     
     // MARK: - Initialization
     init?(coder: NSCoder, viewModel: GameFeedViewModel, gamePlayerController: GamePlayerControllerProtocol, dataSource: GameFeedDataSource) {
@@ -57,6 +58,7 @@ class GameFeedViewController: UIViewController {
         setupCollectionView()
         setupStatusView()
         bindViewModel()
+        bindGamePlayerController()
         observeAppLifecycle()
         viewModel.start()
     }
@@ -100,6 +102,12 @@ class GameFeedViewController: UIViewController {
             let game = strongSelf.viewModel.game(at: index)
             let cell = strongSelf.collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? GameFeedCell
             cell?.configure(with: game, isLiked: isLiked)
+        }
+    }
+    
+    private func bindGamePlayerController() {
+        gamePlayerController.onStateChange = { [weak self] state in
+            self?.playerCell?.setGamePlayerState(state)
         }
     }
     
@@ -155,7 +163,16 @@ class GameFeedViewController: UIViewController {
             gamePlayerController.stop()
             return
         }
-        gamePlayerController.play(viewModel.game(at: activeIndex), in: cell.playerContainer)
+        play(at: activeIndex, in: cell)
+    }
+    
+    private func play(at index: Int, in cell: GameFeedCell) {
+        playerCell = cell
+        cell.onRetry = { [weak self] in
+            self?.gamePlayerController.stop()
+            self?.syncPlayer()
+        }
+        gamePlayerController.play(viewModel.game(at: index), in: cell.playerContainer)
     }
     
     private func pageIndex(for contentOffset: CGPoint) -> Int {
@@ -180,7 +197,7 @@ extension GameFeedViewController: UICollectionViewDelegate {
             guard indexPath.item == viewModel.activeIndex, let cell = cell as? GameFeedCell else {
                 return
             }
-            gamePlayerController.play(viewModel.game(at: indexPath.item), in: cell.playerContainer)
+            play(at: indexPath.item, in: cell)
         }
         
         func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

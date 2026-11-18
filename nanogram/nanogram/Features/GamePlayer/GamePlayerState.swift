@@ -8,6 +8,7 @@
 import Foundation
 
 enum GamePlayerState {
+    case idle
     case loading
     case running
     case failed
